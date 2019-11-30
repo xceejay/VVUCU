@@ -94,9 +94,7 @@ APPLY NOW
 </a>
 </div>
 <p style="font-weight:bold">
-
-Join us and be a part of the credit union difference.
-We make it easy to join! Complete the online account opening process today.
+Want funding for your business?
 </p>
 <a href = register.php style="color:white;text-decoration:none">
 <div class="getstarted" style="border:2px  solid white;border-width:inherit">

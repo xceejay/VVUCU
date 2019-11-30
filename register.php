@@ -14,7 +14,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 
 	// Enter the new user in the database
 
-	$sql = "INSERT INTO users (email, password,fname,lname,phonenumber,residency,city,citizenship,gender) VALUES (:email, :password,:fname,:lname,:phonenumber,:residency,:city,:citizenship,:gender)";
+	$sql = "INSERT INTO users (email, password,fname,lname,phonenumber,residency,city,citizenship,gender,title,maritalstatus,DOB) VALUES (:email, :password,:fname,:lname,:phonenumber,:residency,:city,:citizenship,:gender,:title,:maritalstatus,:DOB)";
 	$stmt = $conn->prepare($sql);
 
 	$stmt->bindParam(':email', $_POST['email']);
@@ -26,6 +26,9 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	$stmt->bindParam(':city', $_POST['city']);
 	$stmt->bindParam(':citizenship', $_POST['citizenship']);
 	$stmt->bindParam(':gender', $_POST['gender']);
+	$stmt->bindParam(':title', $_POST['title']);
+	$stmt->bindParam(':maritalstatus', $_POST['maritalstatus']);
+	$stmt->bindParam(':DOB', $_POST['DOB']);
 	if( $stmt->execute() ):
 		$message = 'Successfully created new user';
 
@@ -97,15 +100,39 @@ endif;
 	<form action="register.php" method="POST">
 
 	<h3>Fill In Your Personal Details</h3>
+	<br>
+	Choose your title here
+	<input type="text" list="title" name="title">
+<datalist id="title">
+  <option value="Mr">Mr</option>
+  <option value="Mrs">Mrs</option>
+  <option value="Ms">Ms</option>
+  <option value="Miss">Miss</option>
+</datalist>
+Choose your Marital status here
+<input type="text" list="maritalstatus" name="maritalstatus">
+<datalist id="maritalstatus">
+  <option value="Single">Single</option>
+  <option value="Married">Married</option>
+  <option value="Divorced">Divorced</option>
+
+</datalist>
 		<input type="text" placeholder="Enter your First Name" name="fname">
 		<input type="text" placeholder="Enter your Last Name" name="lname">
+
+		Date of birth:
+		<input type="date" placeholder="Enter your Date of birth" name="DOB"><br><br>
+		Choose your gender<br>
+		<input type="radio" name="gender" value="male"> Male<br>
+		<input type="radio" name="gender" value="female"> Female<br>
+<input type="radio" name="gender" value="other"> Other
+
 		<input type="tel" placeholder="Enter your Phone Number" name="phonenumber">
 		<input type="text" placeholder="Enter your town residency" name="residency">
 		<input type="text" placeholder="Enter your city" name="city">
 		<input type="text" placeholder="Enter your country of residence" name="citizenship">
-		<input type="radio" name="gender" value="male"> Male<br>
-<input type="radio" name="gender" value="female"> Female<br>
-<input type="radio" name="gender" value="other"> Other
+		
+
 			<br></br>
 
 		<h3>Fill In Login Details</h3>
