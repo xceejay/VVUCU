@@ -25,12 +25,12 @@
 
 DROP TABLE IF EXISTS `users`;
 
-CREATE TABLE `users` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(250) NOT NULL DEFAULT '',
-  `password` varchar(200) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ create table users(email varchar(250) not null ,password varchar (200) not null,fname varchar(200) not null,lname varchar(100) not null,
+ residency varchar(100)  not null ,city varchar(100)  not null ,
+ citizenship varchar(100)  not null ,id int primary key not null auto_increment,phonenumber varchar(100) not null ,
+ gender varchar(100) not null  ,title varchar(4) not null,maritalstatus varchar(100) not null ,DOB date not null);        
+
+ ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;

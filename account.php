@@ -40,6 +40,7 @@ if (isset($_SESSION['user_id'])) {
 			<li><a href="contactus.html">Contact Us</a></li>
 			<li><a href="aboutus.html">About Us</a></li>
 			<li><a href="logout.php">Logout</a></li>
+			<li> <a href="profile.php">Profile </a></li>
 			<li> <a href="profile.php">Your ID : <?php echo $user['id'] ?></a></li>
 		</ul>
 	</div>

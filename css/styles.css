@@ -127,6 +127,7 @@ body {
 
 .getstarted {
   border-radius: 20px;
+  
 }
 .applynow {
   border-radius: 20px;
@@ -232,5 +233,30 @@ h4 {
   cursor: pointer;
   background-color: #000; /* Fallback for older browsers */
   background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-top:10%;
+  margin-left: 25%;
+
+
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  color: black;
+}
+
+tr{
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color:purple;
   color: white;
 }

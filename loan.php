@@ -10,21 +10,23 @@ $message = '';
 if (!empty($_POST['id']) && !empty($_POST['amount'])) :
 
 	// Enter the new user in the database
+	if ($_POST['id'] == $_SESSION[user_id]) {
+		$sql = "INSERT INTO loan (id, amount,date,loantype) VALUES (:id, :amount,curdate(),:loantype)";
 
-	$sql = "INSERT INTO loan (id, amount,date,loantype) VALUES (:id, :amount,curdate(),:loantype)";
-	$stmt = $conn->prepare($sql);
+		$stmt = $conn->prepare($sql);
 
-	$stmt->bindParam(':id', $_POST['id']);
-	$stmt->bindParam(':amount', $_POST['amount']);
+		$stmt->bindParam(':id', $_POST['id']);
+		$stmt->bindParam(':amount', $_POST['amount']);
 
-	$stmt->bindParam(':loantype', $_POST['loantype']);
-	if ($stmt->execute()) :
-		$message = 'Successfully created new user';
+		$stmt->bindParam(':loantype', $_POST['loantype']);
+		
+		if($stmt->execute())
+		echo "You Loan Request was sucessful";
+	} else {
+		echo "not your USERID";
+	}
+	
 
-		header("Location:sucessloan.php");
-	else :
-		$message = 'Sorry, you must have entered something wrongly ';
-	endif;
 
 endif;
 
@@ -45,7 +47,7 @@ endif;
 
 
 	<?php if (!empty($message)) : ?>
-		<p><?= $message ?></p>
+		<h3><?= $message ?></h3>
 	<?php endif; ?>
 
 
@@ -62,6 +64,7 @@ endif;
 			<li><a href="contactus.html">Contact Us</a></li>
 			<li><a href="aboutus.html">About Us</a></li>
 			<li><a href="logout.php">Logout</a></li>
+			<li> <a href="profile.php">Your ID : <?php echo $_SESSION['user_id'] ?></a></li>
 		</ul>
 	</div>
 

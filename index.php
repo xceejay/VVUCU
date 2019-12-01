@@ -109,7 +109,7 @@ APPLY NOW
 	</a>
 <?php else: ?>
 	<a href = login.php style="color:white;text-decoration:none">
-	<div class="applynow" style="border:2px  solid white;border-width:inherit">
+	<div class="applynow" style="border:2px  solid white;border-width:inherit;">
 
 APPLY NOW
 
