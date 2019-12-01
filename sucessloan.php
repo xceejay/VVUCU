@@ -1,1 +1,1 @@
-you have been suscessful in your activation
+you have been sucessful in your loan application
