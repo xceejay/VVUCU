@@ -5,6 +5,7 @@ input[type="text"],
 input[type="tel"],
 input[type="email"],
 input[type="date"],
+input[type="number"],
 input[type="password"] {
   outline: none;
   padding: 10px;
@@ -20,11 +21,11 @@ input[type="submit"] {
   padding: 10px;
   color: #fff;
   background: purple;
-  width: 320px;
+  width: 300px;
   margin: 20px auto;
   margin-top: 0px;
   border: 0px;
-  border-radius: 3px;
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -209,4 +210,33 @@ font-weight: bold;
 margin-left: -70px;
 
 
+}
+
+
+.login {
+  padding: 10px;
+  width: 320px;
+  margin: 20px auto;
+  margin-top: 100px;
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+   background-color: #000; /* Fallback for older browsers */
+    background-color: rgba(0, 0, 0, 0.6);
+    color:white;
+    
+}
+
+.register {
+  padding: 10px;
+  width: 400px;
+  margin: 20px auto;
+  margin-top: 100px;
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+   background-color: #000; /* Fallback for older browsers */
+    background-color: rgba(0, 0, 0, 0.6);
+    color:white;
+    
 }

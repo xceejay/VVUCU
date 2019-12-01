@@ -80,18 +80,21 @@ endif;
 </div>
 <?php endif; ?>
 
+<div class="login">
+<h1 class="logintext" >Login</h1><br>
 
-	<h1  style="color:white">Login</h1>
 
-<p></p>
 	<form action="login.php" method="POST">
-
-		<input type="text" placeholder="Enter your ID" name="id" >  <!-- email was replaced by id here also -->
-		<input type="password" placeholder="Enter your password" name="password">
-
+<h3>Enter Your <text style="color:yellow">ID</text> here
+		<input type="text" placeholder="ID" name="id" >  <!-- email was replaced by id here also -->
+		
+		Enter Your Password here
+		<input type="password" placeholder="password" name="password">
+</h3>
 		<input type="submit" value="login">
 
 	</form>
+</div>
 
 </body>
 </html>

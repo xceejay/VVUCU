@@ -84,14 +84,22 @@ endif;
 	<h1  style="color:white">You sucessfully created a new user, it's time for you to login for the first time</h1>
 
 <p></p>
+<div class="login">
+<h1 class="logintext" >Login</h1><br>
+
+
 	<form action="prelogin.php" method="POST">
-
-		<input type="text" placeholder="Enter your email here" name="email" >  <!-- email was replaced by id here also -->
-		<input type="password" placeholder="Enter your password" name="password">
-
+<h3>Enter Your <text style="color:red">EMAIL</text> here
+		<input type="text" placeholder="EMAIL" name="email" >  <!-- email was replaced by id here also -->
+		
+		Enter Your Password here
+		<input type="password" placeholder="password" name="password">
+</h3>
 		<input type="submit" value="login">
 
 	</form>
+</div>
+
 
 </body>
 </html>

@@ -62,7 +62,12 @@ endif;
 
 	<?php if( !empty($user) ): ?>
 
-<div id="navbar">
+
+
+
+
+<?php else: ?>
+	<div id="navbar">
 
 <ul>
 <li><a href="index.php">Home</a></li>
@@ -76,32 +81,18 @@ endif;
 
 
 
-
-<?php else: ?>
-
-<div id="navbar">
-
-<ul>
-<li><a href="index.php">Home</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="branches.html">Branches</a></li>
-<li><a href="contactus.html">Contact Us</a></li>
-<li><a href="aboutus.html">About Us</a></li>
-</ul>
-</div>
-
-
-
 	<?php endif; ?>
-	<h3><a href="login.php" style="color:grey; text-decoration:none;font-weight:bold">Click To Login here Instead</a></h3>
-
-	<h1>Register</h1>
+	<div style="margin-top:50px;font-size:18px;margin-right:20px">
+	<h3><a href="login.php" style="color:white; text-decoration:none;font-weight:bold">Click To Login here Instead</a></h3>
+</div>
+	<div class="register">
+	<h1>Register</h1><br>
 
 	<form action="register.php" method="POST">
 
-	<h3>Fill In Your Personal Details</h3>
+	<h2>Fill In Your Personal Details</h2>
 	<br>
-	Choose your title here
+<h4>	Choose your title here
 	<input type="text" list="title" name="title">
 <datalist id="title">
   <option value="Mr">Mr</option>
@@ -117,34 +108,42 @@ Choose your Marital status here
   <option value="Divorced">Divorced</option>
 
 </datalist>
-		<input type="text" placeholder="Enter your First Name" name="fname">
-		<input type="text" placeholder="Enter your Last Name" name="lname">
+Enter your first name  here
+		<input type="text" placeholder="First Name" name="fname">
+		Enter your last name  here
+		<input type="text" placeholder="Last Name" name="lname">
 
 		Date of birth:
-		<input type="date" placeholder="Enter your Date of birth" name="DOB"><br><br>
-		Choose your gender<br>
+		<input type="date" placeholder="Date of birth" name="DOB"><br><br>
+		Choose your gender<br> </h4>
 		<input type="radio" name="gender" value="male"> Male<br>
 		<input type="radio" name="gender" value="female"> Female<br>
-<input type="radio" name="gender" value="other"> Other
-
-		<input type="tel" placeholder="Enter your Phone Number" name="phonenumber">
-		<input type="text" placeholder="Enter your town residency" name="residency">
-		<input type="text" placeholder="Enter your city" name="city">
-		<input type="text" placeholder="Enter your country of residence" name="citizenship">
+<input type="radio" name="gender" value="other"> Other<br><br>
+<h4>Enter your phone number here
+		<input type="tel" placeholder="Phone Number" name="phonenumber">
+		Enter your Town of residency here
+		<input type="text" placeholder="Town" name="residency">
+		Enter your City of residency here
+		<input type="text" placeholder="City" name="city">
+		Enter your Country here
+		<input type="text" placeholder="Country" name="citizenship">
 		
-
+		</h4>
 			<br></br>
 
-		<h3>Fill In Login Details</h3>
-
+		<h2>Fill In Login Details</h2><br>
+		<h4>
+		Enter your Email here
 		<input type="email" placeholder="Enter your email" name="email">
+		Enter your password here
 		<input type="password" placeholder="Enter your password" name="password">
+		Confirm your phone number here
 		<input type="password" placeholder="confirm password" name="confirm_password">
 
-
+		</h4>
 		<input type="submit" value="register">
 
 	</form>
-
+</div>
 </body>
 </html>
