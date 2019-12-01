@@ -61,7 +61,7 @@ input[type="submit"]:hover {
 
 #navbar ul li a {
   text-decoration: none;
-  font-family: poppins;
+  font-family: poppins, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 23px;
   padding: 0.2em 1em;
@@ -78,7 +78,8 @@ input[type="submit"]:hover {
 body {
   margin: 0px;
   padding: 0px;
-  font-family: poppins;
+  font-family: poppins, Helvetica, sans-serif;
+ 
   text-align: center;
   background-image: url("../images/bg.jpg");
   background-repeat: repeat-y;
@@ -113,7 +114,7 @@ body {
 }
 
 .content {
-  font-family: poppins;
+  font-family: poppins, Helvetica, sans-serif;
   display: table;
   float: left;
   background-color: none;
@@ -127,7 +128,6 @@ body {
 
 .getstarted {
   border-radius: 20px;
-  
 }
 .applynow {
   border-radius: 20px;
@@ -237,12 +237,13 @@ h4 {
 }
 
 table {
-  border-collapse: collapse;
   width: 50%;
-  margin-top:10%;
+
   margin-left: 25%;
-
-
+  overflow: hidden;
+  border-collapse: separate;
+  border: solid white 2px;
+  border-radius: 15px;
 }
 
 th,
@@ -252,11 +253,11 @@ td {
   color: black;
 }
 
-tr{
-  background-color: #f2f2f2;
+tr {
+  background-color: white;
 }
 
 th {
-  background-color:purple;
+  background-color: purple;
   color: white;
 }

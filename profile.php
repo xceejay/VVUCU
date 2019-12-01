@@ -38,27 +38,41 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    
-    <table style="overflow:hidden">
+    <div id="navbar">
+
+        <ul>
+
+
+
+            <li> <a href="profile.php">Your ID : <?php echo $user['id'] ?></a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="logout.php">Logout</a></li>
+
+        </ul>
+        <h1>Profile</h1>
+        <h3 style="color:purple">Loan Requests</h3>
+    </div>
+    <table>
+
         <tr>
             <th>Date</th>
             <th>Loan Type</th>
             <th>Amount</th>
         </tr>
-      
-            <?php
+
+        <?php
 
 
-            $records = $conn->prepare('SELECT * FROM loan WHERE id = :id');
-            $records->bindParam(':id', $_SESSION['user_id']);
-            $records->execute();
-            while ($row = $records->fetch(PDO::FETCH_ASSOC)) {
-                $data = "<td> {$row['date']} </td><td> {$row['loantype']} </td><td> {$row['amount']} </td>";
-                echo "<tr>$data</tr>";
-            }
+        $records = $conn->prepare('SELECT * FROM loan WHERE id = :id');
+        $records->bindParam(':id', $_SESSION['user_id']);
+        $records->execute();
+        while ($row = $records->fetch(PDO::FETCH_ASSOC)) {
+            $data = "<td> {$row['date']} </td><td> {$row['loantype']} </td><td> $ {$row['amount']} </td>";
+            echo "<tr>$data</tr>";
+        }
 
-            ?>
-       
+        ?>
+
 </body>
 
 </html>
