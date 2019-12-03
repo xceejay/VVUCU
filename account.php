@@ -24,7 +24,7 @@ if (isset($_SESSION['user_id'])) {
 <html>
 
 <head>
-	<title>Login</title>
+	<title><?php echo $user['fname']; ?> <?php echo $user['lname']; ?></title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
@@ -61,7 +61,7 @@ if (isset($_SESSION['user_id'])) {
 		<div class="ad1" style="background-color:none;">
 			<div class="ad1img">
 				<a href=login.php>
-					<img src="images/icons/006-people.png">
+				<img src="images/icons/050-fax.png">
 				</a>
 			</div>
 
@@ -89,7 +89,7 @@ if (isset($_SESSION['user_id'])) {
 		<div class="ad2" style="background-color:none;">
 			<div class="ad2img">
 				<a href=loan.php>
-					<img src="images/icons/005-talk.png">
+					<img src="images/icons/044-global.png">
 				</a>
 			</div>
 			<p style="font-weight:bold">

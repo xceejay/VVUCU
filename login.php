@@ -11,10 +11,10 @@ require 'database.php';
 //if id is not empty and password is not empty, btw email was replaced by ID
 if (!empty($_POST['id']) && !empty($_POST['password'])) :
 
-	$records = $conn->prepare('SELECT id,email,password FROM users WHERE id = :id');
+	$records = $conn->prepare('SELECT id,email,password FROM users WHERE id = :id or email= :email');
 
 	$records->bindParam(':id', $_POST['id']); //binds id to id and checks in the database
-
+	$records->bindParam(':email', $_POST['id']);
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
 
@@ -87,7 +87,7 @@ endif;
 
 
 			<form action="login.php" method="POST">
-				<h3>Enter Your <text style="color:red">ID</text> here
+				<h3>Enter Your <text style="color:red">ID or Email</text> here
 					<input type="text" placeholder="ID" name="id"> <!-- email was replaced by id here also -->
 
 					Enter Your Password here

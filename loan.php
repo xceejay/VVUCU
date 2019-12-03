@@ -77,7 +77,7 @@ endif;
 			<h3>
 				Your ID<input type="text" placeholder="Enter your ID" name="id">
 
-				Loan amount<input type="text" placeholder="Amount" name="amount"><br>
+				Loan amount in USD($)<input type="text" placeholder="Amount" name="amount"><br>
 				Select your loan type</h3>
 			<input type="text" list="title" name="loantype">
 			<datalist id="title">
