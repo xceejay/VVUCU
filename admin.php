@@ -1,87 +1,140 @@
-
 <?php
-
 session_start();
 
-if (isset($_SESSION['admin_id'])) {
-	header("Location: admin.php");
-}
 
 require 'database.php';
 
-//if id is not empty and password is not empty, btw email was replaced by ID
-if (!empty($_POST['id']) && !empty($_POST['password'])) :
+if (isset($_SESSION['admin_id'])) {
 
-	$records = $conn->prepare('SELECT id,password FROM admin WHERE id = :id');
 
-	$records->bindParam(':id', $_POST['id']); //binds id to id and checks in the database
+    $records = $conn->prepare('SELECT * FROM admin WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['admin_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+    $admin = NULL;
+
+    if (count($results) > 0) {
+        $admin = $results;
+    }
+}
+
+if (!empty($_POST['del_id']) ) :
+    $records = $conn->prepare('delete FROM loan WHERE id = :id');
+	$records = $conn->prepare('delete FROM users WHERE id = :id');
+
+	$records->bindParam(':id', $_POST['del_id']); //binds id to id and checks in the database
 
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
 
-	$message = '';
-
-
-	if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-
-		$_SESSION['admin_id'] = $results['id'];
-		header("Location: adminlogin.php");
-	} else {
-		$message = 'Sorry, those credentials do not match';
-	}
-
+    $message = '';
+ 
+    if (count($results) > 0){
+        $message="sucessfully deleted this user $_POST[del_id]";
+    }else{
+        
+    }
 endif;
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
 
 <head>
-	<title>Admin</title>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Admin</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
+
 </head>
 
-<body>
-
-<div id="navbar">
-
-<ul>
-	<li><a href="index.php">Home</a></li>
-	<li><a href="services.html">Services</a></li>
-	<li><a href="branches.html">Branches</a></li>
-	<li><a href="contactus.html">Contact Us</a></li>
-	<li><a href="aboutus.html">About Us</a></li>
-</ul>
-</div>
-
-	<?php if (!empty($message)) : ?>
-		<p><?= $message ?></p>
-	<?php endif; ?>
+<?php if (!empty($admin)) : ?>
 
 
 
+    <div id="navbar">
 
-		<div class="login">
-			<h1 class="logintext">Admin Login</h1>
-			<p>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="branches.html">Branches</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </div>
+
+    <?php echo $message;?>
+    <h1 class="login" style="margin-top:40px"> USERS</h1>
+    <div>
+        <table style="width:90%;margin:auto;">
+
+            <tr>
+
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last name</th>
+                <th>Residency</th>
+                <th>City</th>
+                <th>Citizenship</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Title</th>
+
+                <th>Marital Status</th>
+                <th>Date of Birth</th>
+
+                <th style="text-align:center">Options</th>
+
+            </tr>
+
+            <?php
 
 
-				<form action="admin.php" method="POST">
-				<h3><text style="color:red">ID</text> 
-						<input type="text" placeholder="ID" name="id"> <!-- email was replaced by id here also -->
+                $records = $conn->prepare('SELECT * FROM users');
+                $records->bindParam(':id', $_SESSION['admin_id']);
+                $records->execute();
+                while ($row = $records->fetch(PDO::FETCH_ASSOC)) {
+                    $data = "
+                    <td> {$row['id']} </td>
+                    <td> {$row['fname']} </td>
+                    <td> {$row['lname']} </td>
+                    <td> {$row['residency']} </td>
+                    <td> {$row['city']} </td>
+                    <td> {$row['citizenship']} </td>
+                    <td> {$row['phonenumber']} </td>
+                    <td> {$row['gender']} </td>
+                    <td> {$row['title']} </td>
+                    <td> {$row['maritalstatus']} </td>
+                    <td> {$row['DOB']} </td>
 
-						<h3><text style="color:red">Password</text> 
-						<input type="password" placeholder="password" name="password">
-					</h3>
+                    <td > 
 
-					<input type="submit" value="login">
-					
-			</p>
-			</form>
-		</div>
+                    <form  action='admin.php' method='POST'>
+            
+                     <input type='hidden' name='del_id' value='{$row['id']}'>
+   
+                    <input style='margin:auto;width:100%;font-weight:bold' type='submit' name='submit' value='Delete User {$row['id']} '>
+                    
+                    </form>
+                    </td>";
+                    echo "<tr>$data</tr>";
+             
+                }
 
-</body>
+                ?>
+
+            <div>
+
+            <?php else : ?>
+
+                <?php header("adminlogin.php") ?>
+            <?php endif; ?>
+
+            <body>
+
+            </body>
 
 </html>
