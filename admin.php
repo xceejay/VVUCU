@@ -116,7 +116,7 @@ endif;
             
                      <input type='hidden' name='del_id' value='{$row['id']}'>
    
-                    <input style='margin:auto;width:100%;font-weight:bold' type='submit' name='submit' value='Delete User {$row['id']} '>
+                    <input style='margin:auto;width:100%;font-weight:bold' type='submit' name='submit' value='Delete User '>
                     
                     </form>
                     </td>";
