@@ -25,7 +25,7 @@ if (isset($_SESSION['user_id'])) {
 <head>
 	<title>Account Preview</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<h1 style="margin-top:25%;line-height:">NOTE: We will require you to sigin in with your <text style="color:red">ID</text> or 
+	<h1 style="margin-top:25%;">NOTE: We will require you to sigin in with your <text style="color:red">ID</text> or 
 	<text style="color:red">EMAIL</text> next time you login</h1>
 
 </head>

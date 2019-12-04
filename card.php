@@ -7,21 +7,21 @@ require 'database.php';
 
 $message = '';
 
-if (!empty($_POST['id']) && !empty($_POST['amount'])) :
+if (!empty($_POST['id']) && !empty($_POST['capital'])) :
 
 	// Enter the new user in the database
 	if ($_POST['id'] == $_SESSION[user_id]) {
-		$sql = "INSERT INTO loan (id, amount,date,loantype) VALUES (:id, :amount,curdate(),:loantype)";
+		$sql = "INSERT INTO creditcard (id, capital,date,cardtype) VALUES (:id, :capital,curdate(),:cardtype)";
 
 		$stmt = $conn->prepare($sql);
 
 		$stmt->bindParam(':id', $_POST['id']);
-		$stmt->bindParam(':amount', $_POST['amount']);
+		$stmt->bindParam(':capital', $_POST['capital']);
 
-		$stmt->bindParam(':loantype', $_POST['loantype']);
+		$stmt->bindParam(':cardtype', $_POST['cardtype']);
 
 		if ($stmt->execute())
-			echo "You Loan Request was sucessful";
+			echo "You card Request was sucessful";
 	} else {
 		echo "not your USERID";
 	}
@@ -39,7 +39,7 @@ endif;
 <html>
 
 <head>
-	<title>Apply for Loan</title>
+	<title>Apply for card</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
@@ -71,27 +71,27 @@ endif;
 
 
 	<div class=register>
-		<h1>Apply for a loan</h1><br>
+		<h1>Apply for a credit card</h1><br>
 
-		<form action="loan.php" method="POST">
+		<form action="card.php" method="POST">
 			<h3>
 				Your ID<input type="text" placeholder="Enter your ID" name="id">
 
-				Loan amount in USD($)<br>
+				Credit card capital in USD($)<br>
 
 			
 
-				<input type="number" min="100" max="100000"  step="1" name="amount"><br>
+				<input type="number" min="100" max="100000"  step="1" name="capital"><br>
 
-				Select your loan type
+				Select your Card Type
 			</h3>
-			<input type="text" list="title" name="loantype">
+			<input type="text" list="title" name="cardtype">
 			<datalist id="title">
-				<option value="Home Loan">Home Loan</option>
-				<option value="Credit Card Loan">Credit Card Loan</option>
-				<option value="Auto Loan">Auto Loan</option>
-				<option value="Business Loan">Business Loan</option>
-				<option value="Cash Advance Loan">Cash Advance Loan</option>
+				<option value="Balance Transfer Credit Card">Balance Transfer Credit Card</option>
+				<option value="Student Credit Card">Student Credit Card</option>
+				<option value="Secured Credit Card">Secured Credit Card</option>
+				<option value="Business Card">Business Card</option>
+				<option value="Prepaid Card">Prepaid Card</option>
 			</datalist>
 			<input type="submit" value="apply">
 

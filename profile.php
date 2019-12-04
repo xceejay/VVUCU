@@ -50,7 +50,7 @@ if (isset($_SESSION['user_id'])) {
 
         </ul>
         <h1>Profile</h1>
-        <h3 style="color:purple">Loan Requests</h3>
+        <h2 style="color:grey">Loan Requests</h2>
     </div>
     <table>
 
@@ -58,8 +58,11 @@ if (isset($_SESSION['user_id'])) {
             <th>Date</th>
             <th>Loan Type</th>
             <th>Amount</th>
+            <th>Amount Paid</th>
+
         </tr>
 
+    
         <?php
 
 
@@ -67,11 +70,44 @@ if (isset($_SESSION['user_id'])) {
         $records->bindParam(':id', $_SESSION['user_id']);
         $records->execute();
         while ($row = $records->fetch(PDO::FETCH_ASSOC)) {
-            $data = "<td> {$row['date']} </td><td> {$row['loantype']} </td><td> $ {$row['amount']} </td>";
+            $data = "<td> {$row['date']} </td><td> {$row['loantype']} </td><td> $ {$row['amount']}  </td><td> $ {$row['amountpaid']}  </td>";
             echo "<tr>$data</tr>";
         }
 
         ?>
+
+<table style="margin-top:20px">
+
+<tr>
+<th>Card Number</th>
+    <th>Date</th>
+    <th>Card Type</th>
+    
+    <th>Capital</th>
+
+
+</tr>
+
+
+
+<!-- second table for credit card -->
+
+
+
+<h2 style="color:grey">Credit Card Details</h2>
+<?php
+
+
+$records = $conn->prepare('SELECT * FROM creditcard WHERE id = :id');
+$records->bindParam(':id', $_SESSION['user_id']);
+$records->execute();
+while ($row = $records->fetch(PDO::FETCH_ASSOC)) {
+    $data = "<td> {$row['cardnumber']} </td><td> {$row['date']} </td><td> {$row['cardtype']} </td><td> $ {$row['capital']}  </td>";
+    echo "<tr>$data</tr>";
+}
+
+?>
+
 
 </body>
 

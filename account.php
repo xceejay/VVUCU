@@ -58,7 +58,7 @@ if (isset($_SESSION['user_id'])) {
 
 
 
-		<div class="ad1" style="background-color:none;">
+		<div class="ad1" style="background-color:none;margin-left:25%;margin-top:50px">
 			<div class="ad1img">
 				<a href=login.php>
 				<img src="images/icons/050-fax.png">
@@ -75,7 +75,7 @@ if (isset($_SESSION['user_id'])) {
 			</p>
 
 			<a href=loan.php style="color:white;text-decoration:none">
-				<div class="applynow" style="border:2px  solid white;border-width:inherit">
+				<div class="applynow" style=" border:2px  solid white;border-width:100%;width:30%;margin-left:35%;">
 
 					APPLY NOW
 
@@ -86,6 +86,71 @@ if (isset($_SESSION['user_id'])) {
 
 		</div>
 
+
+
+
+		<div class="ad1" style="background-color:none;margin-top:-220px;margin-left:-0%;">
+			<div class="ad1img">
+				<a href=login.php>
+				<img src="images/icons/050-fax.png">
+				</a>
+			</div>
+
+
+
+			<p style="font-weight:bold">
+
+
+
+				View Your Credit Card Details
+			</p>
+
+			<a href=profile.php style="color:white;text-decoration:none">
+				<div class="applynow" style="border:2px  solid white;border-width:100%;width:30%;margin-left:35%;">
+
+				VIEW NOW
+
+				</div>
+			</a>
+
+
+
+		</div>
+
+
+
+
+
+		<div class="ad1" style="background-color:none;margin-top:-222px;margin-left:50%;">
+			<div class="ad1img">
+				<a href=login.php>
+				<img src="images/icons/050-fax.png">
+				</a>
+			</div>
+
+
+
+			<p style="font-weight:bold">
+
+
+
+				Get your credit Card today
+			</p>
+
+			<a href=card.php style="color:white;text-decoration:none">
+				<div class="applynow" style="border:2px  solid white;border-width:100%;width:30%;margin-left:35%">
+
+					GET IT NOW
+
+				</div>
+			</a>
+
+
+
+		</div>
+
+
+		
 		<div class="ad2" style="background-color:none;">
 			<div class="ad2img">
 				<a href=loan.php>
@@ -93,12 +158,12 @@ if (isset($_SESSION['user_id'])) {
 				</a>
 			</div>
 			<p style="font-weight:bold">
-				Want funding for your business?
+				View Your Loan Requests
 			</p>
-			<a href=register.php style="color:white;text-decoration:none">
-				<div class="getstarted" style="border:2px  solid white;border-width:inherit">
+			<a href=profile.php style="color:white;text-decoration:none">
+				<div class="getstarted" style="border:2px  solid white;border-width:100%">
 
-					GET STARTED
+					VIEW NOW
 
 				</div>
 			</a>
