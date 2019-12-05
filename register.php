@@ -10,7 +10,16 @@ require 'database.php';
 
 $message = '';
 
-if (!empty($_POST['email']) && !empty($_POST['password'])) :
+if (
+	!empty($_POST['email']) &&
+	!empty($_POST['password']) && (preg_match("/^[a-zA-Z ]*$/", $_POST['fname']) && (preg_match("/^[a-zA-Z ]*$/", $_POST['lname']) && (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))))
+) :
+
+
+
+
+
+
 
 	// Enter the new user in the database
 
@@ -57,7 +66,7 @@ endif;
 
 
 	<?php if (!empty($message)) : ?>
-		<p><?= $message ?></p>
+		<p><?php echo $message ?></p>
 	<?php endif; ?>
 
 
@@ -97,11 +106,11 @@ endif;
 	<?php endif; ?>
 
 	<div class="register">
-	<div class="container" style="background-color:none;font-weight:bold;font-size:15px;margin-top:20px">
-  <a href="login.php">Login here if you already have an Account</a>
-  </div>
-	<h1>Register</h1><br>
-	
+		<div class="container" style="background-color:none;font-weight:bold;font-size:15px;margin-top:20px">
+			<a href="login.php">Login here if you already have an Account</a>
+		</div>
+		<h1>Register</h1><br>
+
 		<form action="register.php" method="POST">
 
 			<h2>Fill In Your Personal Details</h2>
@@ -156,7 +165,7 @@ endif;
 
 			</h4>
 			<input type="submit" value="register">
-		
+
 
 		</form>
 	</div>

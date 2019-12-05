@@ -70,7 +70,11 @@ if (isset($_SESSION['user_id'])) {
         $records->bindParam(':id', $_SESSION['user_id']);
         $records->execute();
         while ($row = $records->fetch(PDO::FETCH_ASSOC)) {
-            $data = "<td> {$row['date']} </td><td> {$row['loantype']} </td><td> $ {$row['amount']}  </td><td> $ {$row['amountpaid']}  </td>";
+            $data = "<td> {$row['date']} </td>
+            <td> {$row['loantype']} </td><td> $ {$row['amount']}  </td>
+            <td> $ {$row['amountpaid']}  </td>
+      
+           ";
             echo "<tr>$data</tr>";
         }
 
