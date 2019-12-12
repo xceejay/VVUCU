@@ -34,7 +34,6 @@ endif;
 
 
 
-
 <!DOCTYPE html>
 <html>
 
@@ -52,16 +51,13 @@ endif;
 
 
 
-
-
-
 	<div id="navbar">
 
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="services.html">Services</a></li>
 			<li><a href="branches.html">Branches</a></li>
-			<li><a href="contactus.html">Contact Us</a></li>
+			<li><a href="contactus.php">Contact Us</a></li>
 			<li><a href="aboutus.html">About Us</a></li>
 			<li><a href="logout.php">Logout</a></li>
 			<li> <a href="profile.php">Your ID : <?php echo $_SESSION['user_id'] ?></a></li>

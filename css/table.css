@@ -1,0 +1,29 @@
+body {
+  background-image: url("../images/bg.jpg");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: auto;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}

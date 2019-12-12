@@ -36,7 +36,7 @@ if (isset($_SESSION['user_id'])) {
 
 	
 
-	<h1  class="login"style="margin-top:5%;margin-left:32%;color:purple"><a href="account.php" style="color:white;"> Click here to continue</a></h1>
+	<h1  class="login"style="margin-top:5%;margin-left:32%;color:red"><a href="account.php" style="color:white;"> Click here to continue</a></h1>
 
 </body>
 

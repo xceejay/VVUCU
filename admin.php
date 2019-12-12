@@ -28,11 +28,11 @@ if (!empty($_POST['del_id']) ) :
 	$results = $records->fetch(PDO::FETCH_ASSOC);
 
     $message = '';
- 
+
     if (count($results) > 0){
         $message="sucessfully deleted this user $_POST[del_id]";
     }else{
-        
+
     }
 endif;
 
@@ -60,7 +60,7 @@ endif;
             <li><a href="index.php">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="branches.html">Branches</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="contactus.php">Contact Us</a></li>
             <li><a href="aboutus.html">About Us</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
@@ -110,18 +110,18 @@ endif;
                     <td> {$row['maritalstatus']} </td>
                     <td> {$row['DOB']} </td>
 
-                    <td > 
+                    <td >
 
                     <form  action='admin.php' method='POST'>
-            
+
                      <input type='hidden' name='del_id' value='{$row['id']}'>
-   
+
                     <input style='margin:auto;width:100%;font-weight:bold' type='submit' name='submit' value='Delete User '>
-                    
+
                     </form>
                     </td>";
                     echo "<tr>$data</tr>";
-             
+
                 }
 
                 ?>
@@ -130,7 +130,7 @@ endif;
 
             <?php else : ?>
 
-                <?php header("adminlogin.php") ?>
+                <?php header("Location:adminlogin.php") ?>
             <?php endif; ?>
 
             <body>

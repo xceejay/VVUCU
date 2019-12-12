@@ -1,5 +1,11 @@
 /*everything inherits this file
- yes */
+yes */
+html {
+  scroll-behavior: smooth;
+
+  height: 100%;
+ 
+}
 
 input[type="text"],
 input[type="tel"],
@@ -20,7 +26,7 @@ input[type="password"] {
 input[type="submit"] {
   padding: 10px;
   color: #fff;
-  background: purple;
+  background: red;
   width: 300px;
   margin: 20px auto;
   margin-top: 0px;
@@ -79,13 +85,18 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: poppins, Helvetica, sans-serif;
- 
+
   text-align: center;
   background-image: url("../images/bg.jpg");
   background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
   color: white;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 * {
   box-sizing: border-box;
@@ -246,33 +257,30 @@ table {
   border-radius: 15px;
 }
 
-
 .delbtn {
   padding: 5px;
-  margin-right:0px ;
+  margin-right: 0px;
   margin-left: 7px;
   margin-top: 100px;
   border: 0px;
   border-radius: 50px;
   cursor: pointer;
-  background-color: blue; /* Fallback for older browsers */
+  background-color: blue;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
 .blkbtn {
   padding: 5px;
-  
-  
+
   margin: 20px auto;
   margin-top: 100px;
   border: 0px;
   border-radius: 50px;
   cursor: pointer;
-  background-color: #000; /* Fallback for older browsers */
+  background-color: #000;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
 }
-
 
 th,
 td {
@@ -286,6 +294,177 @@ tr {
 }
 
 th {
-  background-color: purple;
+  background-color: red;
   color: white;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../images/bg.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* CHAT BOT */
+
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  box-shadow: 0px 4px 2px black;
+  color: red;
+}
+#header > #chat-button {
+  float: right;
+  padding: 5px;
+  cursor: pointer;
+}
+#chat-box {
+  position: fixed;
+  right: -300px;
+  top: 0px;
+  width: 300px;
+  height: 100%;
+  /*border: solid 1px red;*/
+}
+#chat-box > #chat-head {
+  height: 58px;
+  width: inherit;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 10px 0 10px 5px;
+  background-color: black;
+  color: white;
+  z-index: 99;
+  box-shadow: 0px 4px 2px black;
+  margin-bottom: 10px;
+}
+#chat-box > #chat-head > i {
+  float: right;
+  color: white;
+  padding: 8px 15px 10px 0;
+  cursor: pointer;
+}
+#chat-box > #converse {
+  height: 85%;
+  background-color: white;
+  padding-left: 5px;
+  font-size: 115%;
+}
+#chat-box > #controls {
+  margin: 0;
+  border-top: 1px solid #aaa;
+  height: 8%;
+  width: 298px;
+  background-color: white;
+  padding: 10px 0 10px 0;
+}
+#chat-box > #controls > #textbox {
+  width: 83%;
+  font-size: 115%;
+  height: inherit;
+  min-height: 48px;
+  max-height: 48px;
+  border: none;
+  padding: 10px;
+}
+#chat-user {
+  color: #0055ff;
+  font-weight: bold;
+  font-size: 90%;
+}
+#chat-bot {
+  color: red;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+textarea {
+  resize: none;
+}
+#chat-box > #controls > #send {
+  background-color: #0055ff;
+  border: none;
+  height: 48px;
+  width: 16%;
+  border-radius: 50%;
+}
+#chat-box > #controls > #send:focus {
+  outline: none;
+}
+.controls-elements {
+  float: left;
+}
+#send-icon {
+  color: white;
+}
+@media all and (max-height: 768px) {
+  #chat-box > #converse {
+    height: 79%;
+    background-color: white;
+    padding-left: 5px;
+    font-size: 115%;
+  }
+  #chat-box > #controls {
+    margin: 0;
+    border-top: 1px solid #aaa;
+    height: 21%;
+    width: 298px;
+    background-color: black;
+    padding: 10px 0 10px 0;
+  }
+}
+@media all and (max-height: 600px) {
+  #chat-box > #converse {
+    height: 78%;
+    background-color: white;
+    padding-left: 5px;
+    font-size: 115%;
+  }
+  #chat-box > #controls {
+    margin: 0;
+    border-top: 1px solid #aaa;
+    height: 22%;
+    width: 298px;
+    background-color: white;
+    padding: 10px 0 10px 0;
+  }
+}
+@media all and (max-height: 481px) {
+  #chat-box > #converse {
+    height: 72%;
+    background-color: white;
+    padding-left: 5px;
+    font-size: 115%;
+  }
+  #chat-box > #controls {
+    margin: 0;
+    border-top: 1px solid #aaa;
+    height: 28%;
+    width: 298px;
+    background-color: white;
+    padding: 10px 0 10px 0;
+  }
+}
+
+/* CHAT BOT */
+
+/* disable scroll bars */
+
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar-button{
+display: none;
+
+}
+::-webkit-scrollbar-track{
+  display: none;
 }

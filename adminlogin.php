@@ -51,7 +51,7 @@ endif;
 	<li><a href="index.php">Home</a></li>
 	<li><a href="services.html">Services</a></li>
 	<li><a href="branches.html">Branches</a></li>
-	<li><a href="contactus.html">Contact Us</a></li>
+	<li><a href="contactus.php">Contact Us</a></li>
 	<li><a href="aboutus.html">About Us</a></li>
 </ul>
 </div>
