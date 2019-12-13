@@ -56,12 +56,11 @@ endif;
 
     <div id="navbar">
 
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="branches.html">Branches</a></li>
-            <li><a href="contactus.php">Contact Us</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
+        <ul style="margin-left:5%">
+            <li><a href="admin.php">Refresh</a></li>
+         
+            <li><a href="register.php">Add User</a></li>
+         
             <li><a href="logout.php">Logout</a></li>
         </ul>
     </div>

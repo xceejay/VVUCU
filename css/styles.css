@@ -107,8 +107,8 @@ body {
   float: right;
   width: 10%;
   height: 10%;
-  padding: 10px;
-  margin-right: 0px;
+  margin-right: 0%;
+  margin-top: 2%;
   font-size: 20px;
 }
 
@@ -117,12 +117,7 @@ body {
   background-color: black;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 
 .content {
   font-family: poppins, Helvetica, sans-serif;
@@ -467,4 +462,11 @@ display: none;
 }
 ::-webkit-scrollbar-track{
   display: none;
+}
+
+@font-face {
+  font-family: poppins;
+ 
+  src: url(../fonts/poppins/Poppins-Regular.otf);
+  
 }
