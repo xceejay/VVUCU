@@ -62,9 +62,10 @@ if (isset($_SESSION['user_id'])) {
 				</div>
 
 				<div id="chat-button" style="margin-top:-3.5%"><i class="fa fa-3x fa-comments" aria-hidden="true"></i></div>
-			</div>
+			</div><text style="margin-left: 93%;color:red;font-weight: bold">Need Help? Click The Icon</text>
+
 			<div id="chat-box" style="color:black">
-				<div id="chat-head">Chat-Bot<i id="cancel" class="fa fa-times"></i></div>
+				<div id="chat-head">VVUCU Chat Bot<i id="cancel" class="fa fa-times"></i></div>
 				<div id="converse"></div>
 				<div id="controls">
 					<textarea id="textbox" class="controls-elements" placeholder="Say something.."></textarea>

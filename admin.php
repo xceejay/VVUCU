@@ -20,7 +20,21 @@ if (isset($_SESSION['admin_id'])) {
 
 if (!empty($_POST['del_id'])) :
     $records = $conn->prepare('delete FROM loan WHERE id = :id');
+     $records->bindParam(':id', $_POST['del_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+
+    $records = $conn->prepare('delete FROM creditcard WHERE id = :id');
+     $records->bindParam(':id', $_POST['del_id']);
+        $records->execute();
+   $results = $records->fetch(PDO::FETCH_ASSOC);
+  
+
+
     $records = $conn->prepare('delete FROM users WHERE id = :id');
+
+   
 
     $records->bindParam(':id', $_POST['del_id']); //binds id to id and checks in the database
 
@@ -32,7 +46,10 @@ if (!empty($_POST['del_id'])) :
     if (count($results) > 0) {
         $message = "sucessfully deleted this user $_POST[del_id]";
     } else { }
+
 endif;
+
+
 
 ?>
 
