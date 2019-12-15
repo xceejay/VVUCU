@@ -128,6 +128,8 @@ if (
 						<option value="Mrs">Mrs</option>
 						<option value="Ms">Ms</option>
 						<option value="Miss">Miss</option>
+						<option value="Miss">Dr</option>
+						<option value="Miss">Prof</option>
 					</datalist>
 					Choose your Marital status here
 					<input type="text" list="maritalstatus" name="maritalstatus">

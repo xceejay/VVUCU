@@ -9,7 +9,7 @@ if (isset($_SESSION['admin_id'])) {
 
 require 'database.php';
 
-//if id is not empty and password is not empty, btw email was replaced by ID
+//if id is not empty and password is not empty, btw email wzas replaced by ID
 if (!empty($_POST['id']) && !empty($_POST['password'])) :
 
 	$records = $conn->prepare('SELECT id,password FROM admin WHERE id = :id');
